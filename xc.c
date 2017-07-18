@@ -3,6 +3,10 @@
 #include <memory.h>
 #include <string.h>
 
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
 int debug;    // print the executed instructions
 int assembly; // print out the assembly and source
 
