@@ -1231,7 +1231,7 @@ int eval() {
         if (op == IMM)       {ax = *pc++;}                                     // load immediate value to ax
         else if (op == LC)   {ax = *(char *)ax;}                               // load character to ax, address in ax
         else if (op == LI)   {ax = *(int *)ax;}                                // load integer to ax, address in ax
-        else if (op == SC)   {ax = *(char *)*sp++ = ax;}                       // save character to address, value in ax, address on stack
+        else if (op == SC)   {*(char *)*sp++ = ax;}                       // save character to address, value in ax, address on stack
         else if (op == SI)   {*(int *)*sp++ = ax;}                             // save integer to address, value in ax, address on stack
         else if (op == PUSH) {*--sp = ax;}                                     // push the value of ax onto the stack
         else if (op == JMP)  {pc = (int *)*pc;}                                // jump to the address
